@@ -29,7 +29,7 @@
 
          <tr>
              <td scope="row"> {{ $post->id }} </td>
-             <td > <img src=" {{asset('storage'). './'. $post->image }}" alt="" width="100" > </td>
+             <td > <img src=" {{asset('storage'). './'. $post->image }}" alt="" title="imagenes" width="100" > </td>
              <td> {{ $post->title }} </td>
              <td> {{ $post->author }}</td>
              <td>

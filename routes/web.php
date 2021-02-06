@@ -26,4 +26,11 @@ Route::group(['prefix' => 'posts'], function () {
 
 });
 
+// Route::get('/cat', function () {
+//     return view('category.index'); sabes hacer? ? ? ? '
+// });
+Route::resource('category', 'CategoriesController');
+
+
+
 

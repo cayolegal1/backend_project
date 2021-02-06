@@ -17,7 +17,7 @@ class PostController extends Controller
 
     {
         //
-        $data ['posts']= Post::paginate (5);
+        $data ['posts']= Post::paginate (7);
         return view( "post.index", $data );
     }
     public function search(Request $request)

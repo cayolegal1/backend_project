@@ -1,5 +1,5 @@
 @extends('base')
-@section('title') Editar formularios  @endsection
+@section('title') Editor base de datos @endsection
 
 @section('content')
 

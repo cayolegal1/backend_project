@@ -13,6 +13,9 @@
           <li class="nav-item">
             <a class="nav-link" href="{{ route('post.index')}}">Post</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('category.index')}}">Categorías</a>
+          </li>
         </ul>
         <form action="{{ route('post.search') }}"  method="POST"  class="d-flex">
             {{ csrf_field() }}
