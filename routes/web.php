@@ -22,14 +22,12 @@ Route::resource('post', 'PostController');// el segundo tiene que ser igual al c
 
 
 Route::group(['prefix' => 'posts'], function () {
-    Route::post('search', 'PostController@search')->name('post.search');
+Route::post('search', 'PostController@search')->name('post.search');
 
 });
 
-// Route::get('/cat', function () {
-//     return view('category.index'); sabes hacer? ? ? ? '
-// });
 Route::resource('category', 'CategoriesController');
+
 
 
 

@@ -1,5 +1,13 @@
+
 .eliminar {
     margin-top: 10px;
+    background-color: #ff2121d9;
+    /*font-weight: 500;*/
+}
+.eliminar:hover {
+    font-weight: 500;
+    background-color: #e80c0cd9;
+
 }
 
 .container {
@@ -7,31 +15,49 @@
 }
 
 .nuevo {
-    background-color: #0d6efd;
+    background-color: #18a563;
     color: white !important;
     text-align: center;
     padding: 9px 10px;
     border-radius: .25rem;
     font-size: 1rem;
+    font-weight: 300;
+    border-color:#198754;
 }
 
 .nuevo:hover {
-    background-color: #2f6fce;
-    background-origin: shadow 1px;
+    background-color: #0bc46d;
+    font-weight: 500;
+
 }
 
 .editar {
     width: 82.5px;
+    background-color: #18a563;
+    /*font-weight: 500;*/
+    border-color:#198754;
 }
+.editar:hover{
+    background-color: #0bc46d !important;
+    border-color: #198754;
+    font-weight: 500;
 
-.boton {
-    background-color: #0d6efd !important;
-    color: white;
-    border-color: #0d6efd !important;
 }
-
 .boton:hover {
-    background-color: #2f6fce !important;
-    background-origin: shadow 1px;
-
+    background-color: #198754 !important;
+}
+.ABM {
+    font-weight: 400;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.ABM:hover {
+    color: rgba(54, 50, 50, 0.918);
+    text-shadow: grey;
+}
+.parrafo {
+    font-weight: 400;
+}
+tr th {
+    text-transform: uppercase;
 }

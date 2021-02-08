@@ -12,9 +12,10 @@
 </nav>
  <table class="table">
      <thead>
-         <tr>
-             <th> {{ "ID" }}</th>
-             <th> {{ "Image" }}</th>
+         <tr class="tabla">
+             <th> {{ " ID " }}</th>
+             <th> {{ "CATEGORY" }}</th>
+             <th> {{ " Image " }}</th>
              <th> {{ " Title " }}</th>
              <th> {{ "Author" }}</th>
              <th> {{ " Actions " }}</th>
@@ -29,6 +30,7 @@
 
          <tr>
              <td scope="row"> {{ $post->id }} </td>
+             <td scope="row"> {{ $post->category->name }} </td> {{--busca el registro en categories, con la funcion category--}}
              <td > <img src=" {{asset('storage'). './'. $post->image }}" alt="" title="imagenes" width="100" > </td>
              <td> {{ $post->title }} </td>
              <td> {{ $post->author }}</td>

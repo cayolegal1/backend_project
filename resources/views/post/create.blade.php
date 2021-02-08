@@ -5,10 +5,20 @@
 
 <form action="{{ route('post.store') }}" method="post" enctype="multipart/form-data">
     {{ csrf_field() }}
-    <div class="mb-3" style="margin-top: 70px;">
+    <div class="mb-3">
         <label for="title" class="form-label">Título</label>
         <input type="text" class="form-control" id="title" name="title">
         <div id="emailHelp" class="form-text">Nunca compartiremos tu email con alguna persona externa</div>
+    </div>
+    <div class="form-group has-feedback">
+        <label class="form-label">Categoría</label>
+        <select name="category_id" class="form-select" required>
+            <option value="">Seleccione la Categoría</option>
+            @foreach ($categories as $cat)
+                <option value="{{ $cat->id}} "> {{ $cat->name }}</option>
+            @endforeach
+
+        </select>
     </div>
     <div class="mb-3">
         <label for="author" class="form-label">Autor</label>

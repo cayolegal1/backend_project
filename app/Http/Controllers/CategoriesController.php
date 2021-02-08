@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Categories;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class CategoriesController extends Controller
 {
@@ -15,8 +16,8 @@ class CategoriesController extends Controller
     public function index()
     {
         //
-        $data['categories'] = Categories::paginate(5);
-        return view( "category.index", $data);
+        $data['categories'] = Categories::paginate(5); //muestra 5 registros por pagina
+        return view( "category.index", $data); //devuelve la vista con los registros
     }
 
     /**
@@ -24,6 +25,16 @@ class CategoriesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function list()
+    {
+        //
+        $data = Categories::all(); //all quiere decir que lista o muestra todo
+        return  response()->json($data, 200);
+
+    }
+
+
     public function create()
     {
         //
@@ -42,6 +53,7 @@ class CategoriesController extends Controller
         $data = $request->except('_token');
         Categories::insert($data);
         return redirect()->route("category.index");
+        Session::flash('alert-success', "Se ha creado la Categoría {$data['name']} con exito!");
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\Categories;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -25,8 +26,10 @@ class PostController extends Controller
 
         $data = $request->input('search');
         $query = Post::select()
+        ->join('categories as cat', 'posts.category_id','=', 'cat.id')
         ->where('title','like',"%$data%")
         ->orwhere('author','like', "%$data%")
+        ->orwhere('cat.name','like', "%$data%")
         ->get();
 
 
@@ -42,7 +45,8 @@ class PostController extends Controller
     public function create()
     {
         //
-        return view("post.create");
+        $categories = Categories::all();
+        return view("post.create")->with(["categories" => $categories]);// es lo mismo que index con dos parametros linea 22
 
     }
 
@@ -98,7 +102,6 @@ class PostController extends Controller
     public function update( Request $request, $id)
     {
         //
-        //$data = $request ->all();
         $data = $request ->except('_token','_method');
         if ($request->hasFile('image')) {
            $post = Post::findOrFail($id);
